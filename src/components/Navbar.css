@@ -1,0 +1,25 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 20px;
+
+  background: #1f3c88;
+  color: white;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.links a {
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: yellow;
+}

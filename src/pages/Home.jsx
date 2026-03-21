@@ -6,59 +6,64 @@ function Home() {
     "Fatigue",
     "Joint pain",
     "Skin rash",
-    "Fever",
+    "Hair fall",
   ];
 
   return (
     <div>
 
-      {/* HERO SECTION */}
+      {/* HERO */}
+
       <div className="hero">
 
         <div className="circle c1"></div>
         <div className="circle c2"></div>
         <div className="circle c3"></div>
 
-        <img
-          src="/butterfly.png"
-          className="butterfly"
-          alt="butterfly"
-        />
-
-        <motion.div
-          className="hero-content"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <h1>Lupus Awareness Website</h1>
-          <p>Spreading knowledge and support</p>
-        </motion.div>
+          Lupus Health Platform
+        </motion.h1>
+
+        <p>
+          Symptoms • Doctors • Tracker • Chatbot • Community
+        </p>
 
       </div>
 
 
-      {/* SYMPTOMS SECTION */}
+      {/* SECTION */}
 
-      <div className="symptoms">
+      <div className="section" data-aos="fade-up">
 
         <h2>Common Symptoms</h2>
 
-        <div className="card-container">
+        {symptoms.map((s, i) => (
+          <div
+            key={i}
+            className="card"
+            data-aos="zoom-in"
+          >
+            {s}
+          </div>
+        ))}
 
-          {symptoms.map((s, i) => (
-            <motion.div
-              key={i}
-              className="card"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              {s}
-            </motion.div>
-          ))}
+      </div>
 
-        </div>
+
+      {/* SECOND SECTION */}
+
+      <div className="section" data-aos="fade-right">
+
+        <h2>Features</h2>
+
+        <div className="card">Chatbot</div>
+        <div className="card">Tracker</div>
+        <div className="card">Doctors</div>
+        <div className="card">Community</div>
 
       </div>
 
