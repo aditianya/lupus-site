@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import "./Home.css";
 
 function Home() {
+
   const symptoms = [
     "Fatigue",
     "Joint pain",
@@ -9,10 +10,17 @@ function Home() {
     "Hair fall",
   ];
 
+  const features = [
+    "Chatbot",
+    "Tracker",
+    "Doctors",
+    "Community",
+  ];
+
   return (
     <div>
 
-      {/* HERO */}
+      {/* HERO SECTION */}
 
       <div className="hero">
 
@@ -21,51 +29,77 @@ function Home() {
         <div className="circle c3"></div>
 
         <motion.h1
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
           Lupus Health Platform
         </motion.h1>
 
-        <p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
           Symptoms • Doctors • Tracker • Chatbot • Community
-        </p>
+        </motion.p>
 
       </div>
 
 
-      {/* SECTION */}
 
-      <div className="section" data-aos="fade-up">
+      {/* SYMPTOMS SECTION */}
+
+      <div
+        className="section"
+        data-aos="fade-up"
+      >
 
         <h2>Common Symptoms</h2>
 
-        {symptoms.map((s, i) => (
-          <div
-            key={i}
-            className="card"
-            data-aos="zoom-in"
-          >
-            {s}
-          </div>
-        ))}
+        <div className="card-container">
+
+          {symptoms.map((s, i) => (
+            <div
+              key={i}
+              className="card"
+              data-aos="zoom-in"
+            >
+              {s}
+            </div>
+          ))}
+
+        </div>
 
       </div>
 
 
-      {/* SECOND SECTION */}
 
-      <div className="section" data-aos="fade-right">
+      {/* FEATURES SECTION */}
+
+      <div
+        className="section"
+        data-aos="fade-right"
+      >
 
         <h2>Features</h2>
 
-        <div className="card">Chatbot</div>
-        <div className="card">Tracker</div>
-        <div className="card">Doctors</div>
-        <div className="card">Community</div>
+        <div className="card-container">
+
+          {features.map((f, i) => (
+            <div
+              key={i}
+              className="card"
+              data-aos="zoom-in"
+            >
+              {f}
+            </div>
+          ))}
+
+        </div>
 
       </div>
+
 
     </div>
   );
