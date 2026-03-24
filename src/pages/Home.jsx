@@ -1,105 +1,71 @@
 import { motion } from "framer-motion";
 import "./Home.css";
+import bg from "../assets/lupus.jpg";
 
 function Home() {
 
   const symptoms = [
-    "Fatigue",
-    "Joint pain",
-    "Skin rash",
-    "Hair fall",
-  ];
-
-  const features = [
-    "Chatbot",
-    "Tracker",
-    "Doctors",
-    "Community",
+    { name: "Fatigue" },
+    { name: "Joint pain" },
+    { name: "Skin rash" },
+    { name: "Hair fall" },
   ];
 
   return (
     <div>
 
-      {/* HERO SECTION */}
+      {/* HERO */}
 
-      <div className="hero">
+      <div
+        className="hero"
+        style={{
+          backgroundImage: `url(${bg})`,
+        }}
+      >
 
-        <div className="circle c1"></div>
-        <div className="circle c2"></div>
-        <div className="circle c3"></div>
+        <div className="overlay">
 
-        <motion.h1
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Lupus Health Platform
-        </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            Lupus Health Platform
+          </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
-          Symptoms • Doctors • Tracker • Chatbot • Community
-        </motion.p>
+          <p>
+            Symptoms • Doctors • Tracker • Chatbot • Community
+          </p>
+
+        </div>
 
       </div>
 
 
+      {/* SYMPTOMS */}
 
-      {/* SYMPTOMS SECTION */}
-
-      <div
-        className="section"
-        data-aos="fade-up"
-      >
+      <div className="section">
 
         <h2>Common Symptoms</h2>
 
         <div className="card-container">
 
           {symptoms.map((s, i) => (
-            <div
-              key={i}
-              className="card"
-              data-aos="zoom-in"
-            >
-              {s}
+
+            <div key={i} className="card">
+
+              <h3>{s.name}</h3>
+
+              <p>
+                Learn more about this symptom
+              </p>
+
             </div>
+
           ))}
 
         </div>
 
       </div>
-
-
-
-      {/* FEATURES SECTION */}
-
-      <div
-        className="section"
-        data-aos="fade-right"
-      >
-
-        <h2>Features</h2>
-
-        <div className="card-container">
-
-          {features.map((f, i) => (
-            <div
-              key={i}
-              className="card"
-              data-aos="zoom-in"
-            >
-              {f}
-            </div>
-          ))}
-
-        </div>
-
-      </div>
-
 
     </div>
   );
